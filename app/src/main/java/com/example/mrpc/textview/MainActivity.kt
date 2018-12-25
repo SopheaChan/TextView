@@ -13,36 +13,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        etEmail.addTextChangedListener(object: TextWatcher{
-            override fun afterTextChanged(p0: Editable?) {
 
-            }
-
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-            }
-
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                var charCounter: Int = etEmail.text.toString().length
-                inputTextValidation(charCounter, etEmail, txtEmailCharCounter, this@MainActivity)
-            }
-
-        })
-        etPassword.addTextChangedListener(object: TextWatcher{
-            override fun afterTextChanged(p0: Editable?) {
-
-            }
-
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-            }
-
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                var charCounter: Int = etPassword.text.toString().length
-                inputTextValidation(charCounter, etPassword, txtPasswordCharCounter, this@MainActivity)
-            }
-
-        })
+        inputTextValidation(etEmail, txtEmailCharCounter, this@MainActivity)
+        inputTextValidation(etPassword, txtPasswordCharCounter, this@MainActivity)
         etEmail.setOnFocusChangeListener { view, b ->
             onIputTextViewFocusChange(b,  txtEmailCharCounter)
         }

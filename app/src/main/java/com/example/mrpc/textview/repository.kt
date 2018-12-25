@@ -9,7 +9,7 @@ import android.widget.EditText
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
 
-fun inputTextValidation(charCounter: Int, editText: EditText, textView: TextView, context: Context){
+fun inputTextValidation(editText: EditText, textView: TextView, context: Context){
     editText.addTextChangedListener(object: TextWatcher{
         override fun afterTextChanged(p0: Editable?) {
 
@@ -20,8 +20,9 @@ fun inputTextValidation(charCounter: Int, editText: EditText, textView: TextView
         }
 
         override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            val charCounter: Int = editText.text.toString().length
             if (charCounter<=50){
-                textView.setTextColor(getColor(context, R.color.abc_secondary_text_material_light))
+                textView.setTextColor(getColor(context, R.color.colorPrimary))
                 textView.text = charCounter.toString() + R.string.ofFifty
             }
             else{
