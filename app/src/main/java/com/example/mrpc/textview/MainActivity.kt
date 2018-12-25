@@ -14,8 +14,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        inputTextValidation(etEmail, txtEmailCharCounter, this@MainActivity)
-        inputTextValidation(etPassword, txtPasswordCharCounter, this@MainActivity)
+        emailValidation(etEmail)
+        passwordValidation(etPassword, txtPasswordCharCounter, this@MainActivity)
         etEmail.setOnFocusChangeListener { view, b ->
             onIputTextViewFocusChange(b,  txtEmailCharCounter)
         }

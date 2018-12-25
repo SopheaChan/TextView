@@ -12,6 +12,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email"
+            android:inputType="textEmailAddress"
             android:textSize="16sp" />
     </android.support.design.widget.TextInputLayout>
     <TextView
@@ -33,7 +34,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:singleLine="true"
+            android:inputType="textPassword"/>
     </android.support.design.widget.TextInputLayout>
     <TextView
         android:id="@+id/txtPasswordCharCounter"
@@ -41,5 +44,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/passwordInputTextLayout"
         android:layout_alignParentEnd="true"
-        android:textSize="12sp"/>
+        android:textSize="12sp"
+        android:singleLine="true"/>
 </RelativeLayout>
